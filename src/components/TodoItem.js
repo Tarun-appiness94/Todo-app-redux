@@ -7,7 +7,6 @@ const TodoItem = (props) => {
 return (
 <div className='ui container' style={{display: "flex", flexWrap: "wrap", gap:"10px"}}>
 {props.todoitems.map((todo, index) => {
-// console.log(todo);
 return(
 <div className="card text-start" key={index} style={{width: "18rem"}}>
   <div className="card-body" >
