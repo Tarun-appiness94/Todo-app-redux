@@ -10,7 +10,11 @@ const AddTodoForm = (props) => {
 						event.preventDefault();
 						let input = event.target.userInput.value;
 						// console.log(input);
+						if (input){
 						props.dispatch(addTodo(input));
+					}else{
+						alert ("Please enter a note")
+					}
 					}} className='form-inline mt-3 mb-3'>
 
 					<label className='sr-only'>Add A Note</label>

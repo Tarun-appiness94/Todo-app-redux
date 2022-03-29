@@ -11,6 +11,7 @@ const todoReducer = (state = initialState, action) => {
                 {message: action.payload.message, 
                 id: action.payload.id}
             ]
+        
         };
 
         case "DELETE_TODO":
