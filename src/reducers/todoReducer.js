@@ -1,5 +1,6 @@
 const initialState = {
     data:[],
+    currentEditData : ""
 }
 const todoReducer = (state = initialState, action) => {
     switch (action.type){
@@ -8,10 +9,11 @@ const todoReducer = (state = initialState, action) => {
             ...state, 
             data: [
                 ...state.data, 
-                {message: action.payload.message, 
-                id: action.payload.id}
+                {id: action.payload.id,
+                message: action.payload.message, 
+                completed : false
+                }
             ]
-        
         };
 
         case "DELETE_TODO":
@@ -21,6 +23,35 @@ const todoReducer = (state = initialState, action) => {
             data: updatedlistData
          };
 
+
+        //  case "EDIT_TODO":
+        //     const editTodoData = state.data.find(todo=> {return(todo.id === action.payload.id)});
+        //     return{
+        //         ...state, currentEditData : editTodoData
+        //      };
+             
+         case "COMPLETED_TODO":
+            const completedData = state.data.map(todo=> {
+                if(todo.id === action.payload.id && !todo.completed) {
+                    return({...todo, completed: true})
+                }else if(todo.id === action.payload.id && todo.completed) {
+                    return({...todo, completed: false})
+                }else{
+                    return ({...todo})}
+                }
+            )
+
+            return { 
+                ...state, 
+                data: completedData
+             };
+    
+         
+            return { 
+                ...state, 
+                data: completedData
+             };
+    
         default:
         return state;
     }
