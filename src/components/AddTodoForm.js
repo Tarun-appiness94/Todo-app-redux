@@ -14,7 +14,7 @@ const AddTodoForm = () => {
 	
 
 	const arrayMessage = todoItems.map(todo => todo.message)
-	
+
 
 
 
@@ -29,7 +29,7 @@ const AddTodoForm = () => {
 					}
 				}
 
-	return (<>
+	return (<div className="container">
 				<form onSubmit={e=>onSubmit(e)} className='form-inline mt-3 mb-3'>
 					<label className='sr-only'>Add A Note</label>
 					<input
@@ -40,17 +40,17 @@ const AddTodoForm = () => {
 						placeholder='Add Note...'
 					/>
 				
-					<button type='submit' className='btn btn-primary mb-2'>Submit</button>
-				
-				</form>
-
-				<div>
-					<span>Show : </span>
+					<button type='submit' className='btn btn-primary mb-2'>Submit</button> 
+					<div style={{display:"inline-block", marginLeft: "50px", alignItems:"center"}}>
+				    <span>Show : </span>
 					<button onClick={()=>dispatch(filterAllTodo())}>All</button> &nbsp;
 					<button onClick={()=>dispatch(filterActiveTodo())}>Active</button> &nbsp;
 					<button onClick={()=>dispatch(filterCompletedTodo())}>Completed</button>
+					</div>
+				
+				</form>
+
 				</div>
-				</>
 			);	
 }
 

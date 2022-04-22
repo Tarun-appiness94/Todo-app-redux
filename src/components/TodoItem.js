@@ -2,7 +2,6 @@ import React from 'react';
 // import { connect } from "react-redux";
 import { deleteTodo, completedTodo} from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
-// import Todo from './Todo';
 
 
 const TodoItem = () => {
