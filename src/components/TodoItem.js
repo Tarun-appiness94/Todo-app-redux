@@ -31,12 +31,14 @@ const TodoItem = () => {
 								<p className="card-title"># {index + 1}</p>
 								<h5 className="card-text">{todo.message}</h5>
 								<hr />
-								<button className='btn-sm btn-danger' onClick={() => dispatch(deleteTodo(todo.id))}>
-									Delete
-								</button>
-								<button className='btn-sm btn-success' onClick={() => dispatch(completedTodo(todo.id))}>
-								Mark Completed
-								</button>
+								<div style={{display: "flex", justifyContent : "space-around"}}>
+										<button className='btn-sm btn-danger' onClick={() => dispatch(deleteTodo(todo.id))}>
+											Delete
+										</button>
+										<button className='btn-sm btn-success' onClick={() => dispatch(completedTodo(todo.id))}>
+											{todo.completed ? "Mark Active" : "Mark Completed"}
+										</button>
+										</div>
 							</div>
 						</div>
 					)}
@@ -48,12 +50,14 @@ const TodoItem = () => {
 									<p className="card-title"># {index + 1}</p>
 									<h5 className="card-text">{todo.message}</h5>
 									<hr />
-									<button className='btn-sm btn-danger' onClick={() => dispatch(deleteTodo(todo.id))}>
-										Delete
-									</button>
-									<button className='btn-sm btn-success' onClick={() => dispatch(completedTodo(todo.id))}>
-										Mark Active
-									</button>
+									<div style={{display: "flex", justifyContent : "space-around"}}>
+										<button className='btn-sm btn-danger' onClick={() => dispatch(deleteTodo(todo.id))}>
+											Delete
+										</button>
+										<button className='btn-sm btn-success' onClick={() => dispatch(completedTodo(todo.id))}>
+											{todo.completed ? "Mark Active" : "Mark Completed"}
+										</button>
+										</div>
 								</div>
 							</div>
 						)}
