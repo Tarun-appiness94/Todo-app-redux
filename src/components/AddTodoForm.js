@@ -40,13 +40,14 @@ const AddTodoForm = () => {
 						placeholder='Add Note...'
 					/>
 				
-					<button type='submit' className='btn btn-primary mb-2'>"Submit"</button>
+					<button type='submit' className='btn btn-primary mb-2'>Submit</button>
 				
 				</form>
 
 				<div>
-					<button onClick={()=>dispatch(filterAllTodo())}>All</button>
-					<button onClick={()=>dispatch(filterActiveTodo())}>Active</button>
+					<span>Show : </span>
+					<button onClick={()=>dispatch(filterAllTodo())}>All</button> &nbsp;
+					<button onClick={()=>dispatch(filterActiveTodo())}>Active</button> &nbsp;
 					<button onClick={()=>dispatch(filterCompletedTodo())}>Completed</button>
 				</div>
 				</>
