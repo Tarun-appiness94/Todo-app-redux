@@ -11,31 +11,36 @@ const TodoItem = () => {
 
 
 	const filterTag = useSelector(state => state.filterReducer)
-	console.log(filterTag);
 	const dispatch = useDispatch();
 
 
 
 
 
+	// (filterTag.active && !todo.completed) ? <Todo todo={todo} index={index} /> : <p>nottt</p>
+	return((todoitems.length !== 0) ? 
 
-
-	return (
-		<div className='ui container' style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-			{todoitems.map((todo, index) => {
+	 (<div className='ui container' style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+			{ todoitems.map((todo, index) => {
 				if (filterTag.active && !todo.completed) {
-					return <Todo todo={todo} index={index} />
+					return <Todo key={index} todo={todo} index={index} />
 				} else if (filterTag.completed && todo.completed) {
-					return <Todo todo={todo} index={index} />
+					return <Todo key={index} todo={todo} index={index} />
 				} else if (filterTag.all) {
-					return <Todo todo={todo} index={index} />
+					return <Todo key={index} todo={todo} index={index} />
 				} else {
-					return "";
+					return " ";
 				}
 			})
 		}
-		</div>
-	);
+		</div>) : 
+		(<div className='ui container'style={{ display: "flex", justifyContent:"center"}}>
+			<p>There is not any Todo, Please enter...</p>
+		</div>)
+	)	
+
+
+
 };
 
 
