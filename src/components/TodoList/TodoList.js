@@ -35,7 +35,7 @@ const TodoItem = () => {
 		}
 		</div>) : 
 		(<div className='ui container'style={{ display: "flex", justifyContent:"center"}}>
-			<p>There is not any Todo, Please enter...</p>
+			<b>There is not any Todo, Please enter...</b>
 		</div>)
 	)	
 
